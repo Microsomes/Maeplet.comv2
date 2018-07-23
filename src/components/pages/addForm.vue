@@ -43,9 +43,8 @@
 </div>
 
 <div class="postImage">
-    Upload a Thumbnail:
-   <input type="file"/>
-</div>
+     <textarea v-model="source" placeholder="Search a gif"></textarea>
+ </div>
 
 <div class="addButton">
          <md-button @click="addPost" style="background:#FF5252;color:white;" class="md-accent">Add</md-button>
@@ -62,6 +61,7 @@
 const axios= require("axios");
 
 var markdown = require( "markdown" ).markdown;
+var giphy = require('giphy-api')('vMgFuPGX8IfBKgl6K7OBqxKpxhRzWUD1');
 
 
 export default{
@@ -221,8 +221,9 @@ export default{
 
 }
 .formC{
-     height: 100%;
-    padding: 20px;
+     padding: 20px;
+    overflow-y: scroll;
+    height: 84vh;
  }
 
 
